@@ -1,0 +1,19 @@
+version: '3'
+services:
+  php:
+    build:
+      context: ./services/php
+      dockerfile: php.Dockerfile
+    restart: always
+    depends_on:
+      - nginx
+  #redis:
+  #  image: redis:alpine
+  nginx:
+    image: nginx:alpine
+    build:
+      context: ./services/nginx
+      dockerfile: nginx.Dockerfile
+    restart: always
+    ports:
+      - 8080:80
