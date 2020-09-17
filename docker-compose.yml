@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   php:
     build:
@@ -7,6 +7,9 @@ services:
     restart: always
     depends_on:
       - nginx
+    volumes:
+      - .:/app:delegated
+
   #redis:
   #  image: redis:alpine
   nginx:
@@ -16,4 +19,7 @@ services:
       dockerfile: nginx.Dockerfile
     restart: always
     ports:
-      - 8080:80
+      - target: 80
+        published: 80
+
+
