@@ -11,6 +11,8 @@ RUN apt-get install -yq nano wget git
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 
+RUN symfony self:update
+
 EXPOSE 9000
 
 CMD ["php-fpm"]
