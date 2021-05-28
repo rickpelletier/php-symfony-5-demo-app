@@ -8,7 +8,9 @@ services:
     depends_on:
       - nginx
     volumes:
-      - .:/app:delegated
+      - ./app:/app:delegated
+    ports:
+      - 18022:18022
 
   #redis:
   #  image: redis:alpine
@@ -19,7 +21,7 @@ services:
       dockerfile: nginx.Dockerfile
     restart: always
     volumes:
-      - .:/app:delegated
+      - ./app:/app:delegated
     ports:
       - target: 80
         published: 8087
