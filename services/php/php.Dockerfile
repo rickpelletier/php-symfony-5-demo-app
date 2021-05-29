@@ -61,6 +61,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 
 EXPOSE 9000
 
+# Set permissions for entrypoint script
 RUN chmod 744 /start.sh
 
 ENTRYPOINT ["/start.sh"]
