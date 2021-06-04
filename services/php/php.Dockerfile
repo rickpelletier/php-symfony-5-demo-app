@@ -37,6 +37,7 @@ RUN apt-get install -yq \
         && docker-php-ext-enable amqp
 
 RUN pecl install redis && docker-php-ext-enable redis
+RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 RUN apt-get install -yq \
     libmcrypt-dev \
