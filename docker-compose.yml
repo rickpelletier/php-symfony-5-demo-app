@@ -11,6 +11,8 @@ services:
       - ./app:/app:delegated
     ports:
       - 18022:18022
+    env_file:
+      - services/php/.env
 
   #redis:
   #  image: redis:alpine
